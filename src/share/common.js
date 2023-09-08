@@ -21,16 +21,3 @@ export const makeDoingDone = (Url) =>{
   .then(res => res.json())
   .then(data => console.log(data))
 }
-// export const makeDone = (id) =>{
-//   const url = `http://localhost:5000/makeDone/${id}`;
-//   const requestOptions = {
-//       method: 'PATCH',
-//       headers: {
-//         'Content-Type': 'application/json', 
-//       },
-//     };
-
-//   fetch(url, requestOptions)
-//   .then(res => res.json())
-//   .then(data => console.log(data))
-// }

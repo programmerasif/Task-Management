@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaBan } from 'react-icons/fa';
-import { deleteTodo } from '../share/common';
+import { deleteTodo, makeDoingDone } from '../share/common';
 const Done = () => {
     const [data,setData] = useState([])
     useEffect(() =>{
@@ -10,8 +10,12 @@ const Done = () => {
     },[])
 
     const handelDelet = (id) =>{
-        deleteTodo(id)
-    }
+        // delete
+            deleteTodo(id)
+        }
+    
+       
+        
     return (
         <>
         <div className="bg-[#00000042]  rounded-md text-center h-full w-96 text-white">
@@ -26,7 +30,7 @@ const Done = () => {
                 <h5 className="text-start text-gray-300 text-xs">{item.description}... <button className="text-blue-600" >See-more</button></h5>
                 <div className="text-sm font-bold mt-3 text-black flex justify-center items-center gap-5">
                     
-                    <button className="bg-white px-12 py-2 rounded-full">Done</button>
+                    <button className="bg-gray-400 px-12 py-2 rounded-full" disabled>Done</button>
                     <button className="bg-white px-12 py-2 rounded-full text-xl hover:bg-red-600 hover:text-white duration-300" onClick={() => handelDelet(item._id)} > <FaBan/> </button>
                 </div>
             </div>

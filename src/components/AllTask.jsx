@@ -24,6 +24,7 @@ const AllTask = () => {
         makeDoingDone(`http://localhost:5000/makeDoing/${id}`)
     }
     const handelDone = (id) =>{
+        // Done
         makeDoingDone(`http://localhost:5000/makeDone/${id}`)
     }
    
