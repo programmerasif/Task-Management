@@ -1,6 +1,10 @@
+import useAllTodo from "./share/useAllTodo";
+import useTodo from "./share/useTodo";
+
 
 const AddNewTodo = () => {
-
+const [ ,refetch] = useAllTodo()
+const [ ,totoRefetch] = useTodo()
     
     const handleSubmit = (event) =>{
         event.preventDefault();
@@ -36,6 +40,8 @@ if (response.ok) {
 })
 .then(data => {
 console.log('Response Data:', data);
+refetch()
+totoRefetch()
 })
 .catch(error => {
 console.error('Error:', error);

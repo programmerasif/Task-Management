@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 const useTodo = () => {
 
      
-     const { refetch, data: todo = []  } = useQuery({
+     const { refetch:totoRefetch, data: todo = []  } = useQuery({
          queryKey: ['todo'],
          enabled: true,
          queryFn: async () =>{
@@ -15,7 +15,7 @@ const useTodo = () => {
          }
        })
       
-       return [todo, refetch]
+       return [todo, totoRefetch]
  };
   
   export default useTodo;

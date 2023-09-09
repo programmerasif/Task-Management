@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 const useDoing = () => {
 
      
-    const { refetch, data: doing = []  } = useQuery({
+    const { refetch : refrtchDoing, data: doing = []  } = useQuery({
         queryKey: ['data'],
         enabled: true,
         queryFn: async () =>{
@@ -16,7 +16,7 @@ const useDoing = () => {
         }
       })
       
-      return [doing, refetch]
+      return [doing, refrtchDoing]
 };
 
 export default useDoing;
