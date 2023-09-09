@@ -1,0 +1,5 @@
+.react-tabs .react-tabs__tab--selected {
+    background-color: #33b4ff; 
+    color: #ffffff;
+    margin-right: 30px;
+  }
