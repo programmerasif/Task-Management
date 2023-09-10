@@ -22,7 +22,7 @@ const UpdatedIem = (id) => {
         description,
         id
        }
-       const url = `http://localhost:5000/makeUpdate`;
+       const url = `https://task-managemant-server.vercel.app/makeUpdate`;
        const requestOptions = {
            method: 'PATCH',
            headers: {

@@ -20,7 +20,7 @@ const [ ,totoRefetch] = useTodo()
 
 
     //    fetching 
-    const url = 'http://localhost:5000/addTask';
+    const url = 'https://task-managemant-server.vercel.app/addTask';
     const requestOptions = {
         method: 'POST', 
         headers: {

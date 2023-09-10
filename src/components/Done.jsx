@@ -48,7 +48,7 @@ const Done = () => {
 
             {
                     done.map((item,index) => <div key={item._id}>
-                   <div className="w-[28rem] px-5 mx-auto p-5 rounded-md mt-5 mb-0 hover:bg-[#00000032] bg-[#0000005f] duration-200">
+                   <div className="w-[20rem] lg:w-[28rem] px-5 mx-auto p-5 rounded-md mt-5 mb-0 hover:bg-[#00000032] bg-[#0000005f] duration-200">
                    <h5 className="text-start text-xl mb-2">{index + 1}. {item.title}</h5>
                 <h5 className="text-start text-gray-300 text-xs">{item.description}... <button className="text-blue-600" >
                 

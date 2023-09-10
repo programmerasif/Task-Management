@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-    <h5 className='text-sky-800 uppercase bg-white text-center p-5 font-bold text-4xl '>Task management </h5>
+    <h5 className='text-sky-800 uppercase bg-white text-center p-5 font-bold text-2xl md:text-3xl lg:text-4xl '>Task management </h5>
      <section className='w-full lg:w-[80%] mx-auto'>
      
 

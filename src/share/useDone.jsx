@@ -8,7 +8,7 @@ const useDone = () => {
         enabled: true,
         queryFn: async () =>{
            
-           const res = await fetch(`http://localhost:5000/done`);
+           const res = await fetch(`https://task-managemant-server.vercel.app/done`);
            const data = await res.json();
           return data;
         }

@@ -1,7 +1,7 @@
 import Swal from "sweetalert2"
 
 export const deleteTodo = (id,refetch) =>{
-    fetch(`http://localhost:5000/delete/${id}`,{
+    fetch(`https://task-managemant-server.vercel.app/delete/${id}`,{
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',

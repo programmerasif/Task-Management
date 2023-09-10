@@ -35,13 +35,13 @@ const Todo = () => {
 
   const handelDoing = (id, totoRefetch) => {
     // Doing
-    makeDoingDone(`http://localhost:5000/makeDoing/${id}`, totoRefetch);
+    makeDoingDone(`https://task-managemant-server.vercel.app/makeDoing/${id}`, totoRefetch,"doing");
     totoRefetch();
   };
 
   const handelDone = (id, totoRefetch) => {
     // Done
-    makeDoingDone(`http://localhost:5000/makeDone/${id}`, totoRefetch);
+    makeDoingDone(`https://task-managemant-server.vercel.app/makeDone/${id}`, totoRefetch,"done");
     totoRefetch();
   };
 
@@ -81,7 +81,7 @@ const Todo = () => {
                   <button className={`px-3 py-2 rounded-full ${item.status ? "bg-gray-400" : "bg-white"}`} disabled={item.status}>Todo</button>
                   <button className={`px-3 py-2 rounded-full ${item.status == 'done' || item.status == 'doing' ? "bg-gray-400" : "bg-white"}`} onClick={() => handelDoing(item._id, totoRefetch)}>Doing</button>
                   <button className={`bg-white px-3 py-2 rounded-full ${item.status == 'done' ? "bg-gray-400" : "bg-white"}`}>
-                    {item.status == "done" ? <span className={`text-green-800 text-xl font-bold `}><FaCheck /></span> : <span className="text-xs" onClick={() => handelDone(item._id, totoRefetch)}>Make-Done</span>}
+                    {item.status == "done" ? <span className={`text-green-800 text-xl font-bold `}><FaCheck /></span> : <span className="text-xs" onClick={() => handelDone(item._id, totoRefetch)}>Done</span>}
                   </button>
                   <Popup
                     contentStyle={{ background: 'black', color: "white", borderRadius: "10px", border: "none", padding: "20px" }}

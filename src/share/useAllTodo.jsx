@@ -8,7 +8,7 @@ const useAllTodo = () => {
         enabled: true,
         queryFn: async () =>{
            
-           const res = await fetch(`http://localhost:5000/allTask`);
+           const res = await fetch(`https://task-managemant-server.vercel.app/allTask`);
            const data = await res.json();
           return data;
         }

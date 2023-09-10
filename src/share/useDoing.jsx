@@ -10,7 +10,7 @@ const useDoing = () => {
         enabled: true,
         queryFn: async () =>{
            
-           const res = await fetch(`http://localhost:5000/doing`);
+           const res = await fetch(`https://task-managemant-server.vercel.app/doing`);
            const data = await res.json();
           return data;
         }

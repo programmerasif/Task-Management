@@ -30,7 +30,7 @@ const Doing = () => {
   };
 
   const handleDone = (id, refetchDoing) => {
-    makeDoingDone(`http://localhost:5000/makeDone/${id}`, refetchDoing, 'done');
+    makeDoingDone(`https://task-managemant-server.vercel.app/makeDone/${id}`, refetchDoing, 'done');
     refetchDoing();
   };
 
@@ -44,7 +44,7 @@ const Doing = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
           {doing.map((item, index) => (
             <div key={item._id}>
-              <div className="w-[28rem] px-5 mx-auto p-5 rounded-md mt-5 mb-0 hover:bg-[#00000032] bg-[#0000005f] duration-200">
+              <div className="w-[20rem] lg:w-[28rem] px-5 mx-auto p-5 rounded-md mt-5 mb-0 hover:bg-[#00000032] bg-[#0000005f] duration-200">
                 <h5 className="text-start text-xl mb-2">{index + 1}. {item.title}</h5>
                 <h5 className="text-start text-gray-300 text-xs">
                   {item.description}...{' '}
@@ -72,7 +72,7 @@ const Doing = () => {
                           </div>
                           <div className="content flex justify-center items-center flex-col gap-8">
                             {item.description}
-                            <button className="ring-2 px-6 py-3 rounded-md" onClick={close}>
+                            <button className="ring-2 px-3 lg:px-5 py-3 rounded-md" onClick={close}>
                               Close
                             </button>
                           </div>
@@ -82,17 +82,17 @@ const Doing = () => {
                   </span>
                 </h5>
                 <div className="text-sm font-bold mt-3 text-black flex justify-between items-center gap-2">
-                  <button className={`px-6 py-2 rounded-full ${item.status === 'done' || item.status === 'doing' ? 'bg-gray-400' : 'bg-white'}`}>
+                  <button className={`px-3 lg:px-5 py-2 rounded-full ${item.status === 'done' || item.status === 'doing' ? 'bg-gray-400' : 'bg-white'}`}>
                     Doing
                   </button>
-                  <button className={`bg-white px-6 py-2 rounded-full ${item.status === 'done' ? 'bg-gray-400' : 'bg-white'}`}>
+                  <button className={`bg-white px-3 lg:px-5 py-2 rounded-full ${item.status === 'done' ? 'bg-gray-400' : 'bg-white'}`}>
                     {item.status === 'done' ? (
                       <span className="text-green-800 text-xl font-bold">
                         <FaCheck />
                       </span>
                     ) : (
                       <span className="text-xs" onClick={() => handleDone(item._id, refetchDoing)}>
-                        Make-Done
+                        Done
                       </span>
                     )}
                   </button>
@@ -105,7 +105,7 @@ const Doing = () => {
                       padding: '20px'
                     }}
                     trigger={
-                      <span className="bg-white px-3 text-green-500 py-2 rounded-full text-xs hover:bg-green-600 hover:text-white duration-300 font-bold">
+                      <span className="bg-white px-3 lg:px-5 text-green-500 py-2 rounded-full text-xs hover:bg-green-600 hover:text-white duration-300 font-bold">
                         <div className="flex justify-start items-center">Update</div>
                       </span>
                     }
@@ -116,7 +116,7 @@ const Doing = () => {
                       <div className="modal sm:h-full mx-auto">
                         <div className="header"> </div>
                         <div className="w-full content flex justify-center items-center flex-col">
-                          <button className="ring-2 px-6 py-3 rounded-full absolute top-0 right-0" onClick={close}>
+                          <button className="ring-2 px-3 lg:px-5 py-3 rounded-full absolute top-0 right-0" onClick={close}>
                             X
                           </button>
                           <UpdatedIem id={item._id} />
@@ -124,7 +124,7 @@ const Doing = () => {
                       </div>
                     )}
                   </Popup>
-                  <button className="bg-white px-6 text-red-500 py-2 rounded-full text-xl hover:bg-red-600 hover:text-white duration-300" onClick={() => handleDelete(item._id, refetchDoing)}>
+                  <button className="bg-white px-3 lg:px-5 text-red-500 py-2 rounded-full text-xl hover:bg-red-600 hover:text-white duration-300" onClick={() => handleDelete(item._id, refetchDoing)}>
                     <FaBan />
                   </button>
                 </div>

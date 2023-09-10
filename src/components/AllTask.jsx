@@ -36,13 +36,13 @@ const AllTask = () => {
 
   const handelDoing = (id, refetch) => {
     // Doing
-    makeDoingDone(`http://localhost:5000/makeDoing/${id}`, refetch, "doing")
+    makeDoingDone(`https://task-managemant-server.vercel.app/makeDoing/${id}`, refetch, "doing")
     refetch()
   }
 
   const handelDone = (id, refetch) => {
     // Done
-    makeDoingDone(`http://localhost:5000/makeDone/${id}`, refetch, "done")
+    makeDoingDone(`https://task-managemant-server.vercel.app/makeDone/${id}`, refetch, "done")
     refetch()
   }
 
@@ -79,11 +79,11 @@ const AllTask = () => {
                   </button>
                 </h5>
                 <div className="text-sm font-bold mt-3 text-black flex justify-between items-center gap-2">
-                  <button className={`px-4 py-2 rounded-full ${item.status ? "bg-gray-400" : "bg-white"}`} disabled={item.status}>Todo</button>
-                  <button className={`px-4 py-2 rounded-full ${item.status === 'done' || item.status === 'doing' ? "bg-gray-400" : "bg-white"}`} onClick={() => handelDoing(item._id,refetch)}>Doing</button>
-                  <button className={`bg-white px-4 py-2 rounded-full ${item.status === 'done' ? "bg-gray-400" : "bg-white"}`}>
+                  <button className={`px-3 py-2 rounded-full ${item.status ? "bg-gray-400" : "bg-white"}`} disabled={item.status}>Todo</button>
+                  <button className={`px-3 py-2 rounded-full ${item.status === 'done' || item.status === 'doing' ? "bg-gray-400" : "bg-white"}`} onClick={() => handelDoing(item._id,refetch)}>Doing</button>
+                  <button className={`bg-white px-3 py-2 rounded-full ${item.status === 'done' ? "bg-gray-400" : "bg-white"}`}>
                     {item.status === "done" ? <span className={`text-green-800 text-xl font-bold `}><FaCheck /></span> :
-                      <span className="text-xs" onClick={() => handelDone(item._id,refetch)}>Make-Done</span>
+                      <span className="text-xs" onClick={() => handelDone(item._id,refetch)}>Done</span>
                     }
                   </button>
                   <Popup
