@@ -28,7 +28,7 @@ const UpdatedIem = (id) => {
            headers: {
              'Content-Type': 'application/json',
            },
-           body: JSON.stringify(body), // Convert data to JSON format
+           body: JSON.stringify(body),
          };
      
        fetch(url, requestOptions)
@@ -55,9 +55,9 @@ const UpdatedIem = (id) => {
             <form onSubmit={handleSubmit} className=' flex flex-col justify-center gap-2'>
 
                                 <label>Title</label>
-                                <input type="text" className='bg-[#00000083] w-full text-white border  rounded-s-md px-8 py-4 ' placeholder='Add Title' name="title"/>
+                                <input type="text" required className='bg-[#00000083] w-full text-white border  rounded-s-md px-8 py-4 ' placeholder='Add Title' name="title"/>
                                 <label>Description</label>
-                                <input type="text"  className='bg-[#00000083] w-full text-white border rounded-s-md px-8 py-4 ' placeholder='Add Description' name="description"/>
+                                <input type="text" required className='bg-[#00000083] w-full text-white border rounded-s-md px-8 py-4 ' placeholder='Add Description' name="description"/>
                                 <div className="flex justify-center items-center gap-5">
                             <button  type="Update" className="ring-2 px-6 py-3 rounded-md" > Update</button>
                             </div>
