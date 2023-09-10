@@ -1,10 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
 
 const useDone = () => {
 
      
-    const { refetch, data: done = []  } = useQuery({
+    const { refetch:refetchDone, data: done = []  } = useQuery({
         queryKey: ['done'],
         enabled: true,
         queryFn: async () =>{
@@ -15,7 +14,7 @@ const useDone = () => {
         }
       })
       
-      return [done, refetch]
+      return [done, refetchDone]
 };
 
 export default useDone;

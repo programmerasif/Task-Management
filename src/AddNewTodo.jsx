@@ -9,8 +9,8 @@ const [ ,totoRefetch] = useTodo()
     const handleSubmit = (event) =>{
         event.preventDefault();
         const form = event.target
-        const title = form.title.value
-        const description = form.description.value
+        let title = form.title.value
+        let description = form.description.value
         // Adding new Todo
        const data = {
         title,
@@ -39,6 +39,8 @@ if (response.ok) {
 }
 })
 .then(data => {
+  form.title.value = '';
+  form.description.value = '';
 console.log('Response Data:', data);
 refetch()
 totoRefetch()
