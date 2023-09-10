@@ -52,9 +52,9 @@ console.error('Error:', error);
     return (
        
             
-                <form onSubmit={handleSubmit} className='w-[70%] flex justify-center gap-2'>
-                <input type="text"  className='bg-[#00000083] text-white w-[50%] rounded-s-md px-8 py-4 ' placeholder='Add Title' name="title"/>
-                <input type="text"  className='bg-[#00000083] text-white w-[50%] rounded-s-md px-8 py-4 ' placeholder='Add Description' name="description"/>
+                <form onSubmit={handleSubmit} className='w-[70%] flex justify-center flex-col lg:flex-row gap-2'>
+                <input type="text"  className='bg-[#00000083] text-white  lg:w-[50%] rounded-s-md px-8 py-4 ' placeholder='Add Title' name="title"/>
+                <input type="text"  className='bg-[#00000083] text-white lg:w-[50%] rounded-s-md px-8 py-4 ' placeholder='Add Description' name="description"/>
                 <button type="submit" value="Add Todo" className='bg-[#00000083] text-white rounded-md px-8 py-4'>Submit</button>
                 </form>
     
